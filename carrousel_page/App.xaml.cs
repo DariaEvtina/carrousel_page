@@ -8,9 +8,7 @@ namespace carrousel_page
     {
         public App()
         {
-            InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new temperament());
         }
 
         protected override void OnStart()

@@ -19,8 +19,14 @@ namespace carrousel_page
         int D = 0;
         Button Btn;
         Label lbl;
+        protected override void OnAppearing()
+        {
+            lbl.Text = Preferences.Get("result", "");
+            base.OnAppearing();
+        }
         public void chtx()
         {
+            Preferences.Set("result", $"your temperament:\n Phlegmatic:{(A * 100) / 13}%\n Melancholic:{(B * 100) / 13}%\n Choleric:{(C * 100) / 13}%\n Sanguine:{(D * 100) / 13}%");
             lbl.Text = $"your temperament:\n Phlegmatic:{(A * 100) / 13}%\n Melancholic:{(B * 100) / 13}%\n Choleric:{(C * 100) / 13}%\n Sanguine:{(D * 100) / 13}%";
         }
         public async void Result()
